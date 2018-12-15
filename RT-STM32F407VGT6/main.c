@@ -16,6 +16,7 @@
 /*=============================================================================*/
 /*-----------------------------------------------------------*/
 /* ChibiOS on 3P Controller PCB -STM32F407VGT6 */
+/* Arok Gandring Lokajaya                      */
 /*-----------------------------------------------------------*/
 /*=============================================================================*/
 /*---------------------------------   Header   --------------------------------*/
@@ -49,15 +50,31 @@ static adcsample_t samples1[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
 /*--------------------------------------------------------------------------*/
 /*=============================================================================*/
 
+
+/*=============================================================================*/
+//PWM
+static PWMConfig pwmcfgTim1 = {
+  100000,                                    /* 10kHz PWM clock frequency. Timer clock in Hz.   */
+  10000,                                    /* Initial PWM period 1S.  PWM period in ticks.     */
+  /* PWM period (in ticks) 1S (1/10kHz=0.1mS 0.1ms*10000 ticks=1S) */
+  NULL,                                     /* Period callback.              */
+  {
+   {PWM_OUTPUT_ACTIVE_HIGH, NULL},          /* CH1 mode and callback.         */
+   {PWM_OUTPUT_ACTIVE_HIGH, NULL},          /* CH2 mode and callback.         */
+   {PWM_OUTPUT_DISABLED, NULL},             /* CH3 mode and callback.         */
+   {PWM_OUTPUT_DISABLED, NULL},            /* CH4 mode and callback.         */
+  },
+  0,                                        /* Control Register 2.            */ 
+  127,                                       /*TIM BDTR (break & dead-time) if use STM32_PWM_USE_ADVANCED.*/
+  0                                         /* DMA/Interrupt Enable Register. TIM DIER register*/
+};
+
+/*=============================================================================*/
+//ADC
 static void adcerrorcallback(ADCDriver *adcp, adcerror_t err) {
   (void)adcp;
   (void)err;
 }
-/*
- * ADC end conversion callback.
- * The PWM channels are reprogrammed using the latest ADC samples.
- * The latest samples are transmitted into a single SPI transaction.
- */
 
 void adc_callback(ADCDriver *adcp, adcsample_t *buffer, size_t n) {
   (void) buffer; (void) n;
@@ -95,7 +112,7 @@ static const ADCConversionGroup adcgrpcfg1 = {
 static event_source_t button_pressed_event;
 static event_source_t button_released_event;
 
-static void button_cb(void *arg) {
+static void button1_cb(void *arg) {
   (void)arg;
   chSysLockFromISR();
   if (palReadLine(BUTTON1) == BUTTON_PRESSED) {
@@ -137,7 +154,7 @@ static THD_FUNCTION(Thread2, arg) {
   chEvtRegister(&button_released_event, &el1, 1);
   /* Enabling events on both edges of the button line.*/
   palEnableLineEvent(BUTTON1, PAL_EVENT_MODE_BOTH_EDGES);
-  palSetLineCallback(BUTTON1, button_cb, NULL);
+  palSetLineCallback(BUTTON1, button1_cb, NULL);
   while (true) {
     eventmask_t events;
     events = chEvtWaitOne(EVENT_MASK(0) | EVENT_MASK(1));
@@ -147,14 +164,14 @@ static THD_FUNCTION(Thread2, arg) {
         count_button1pressed++;
         event_button1pressed=1;
         chprintf((BaseSequentialStream *)&SD2,"Button Pressed : %d \r\n", count_button1pressed);
-        if((count_button1pressed/2 >= 1) && (count_button1pressed%2==0)){
-          flag_adc=1; //start read adc value
-          chprintf((BaseSequentialStream *)&SD2,"Start Reading ADC Value \r\n\r\n");
-        }
-        else{
-          flag_adc=0; //stop read adc value
-          chprintf((BaseSequentialStream *)&SD2,"Stop Reading ADC Value \r\n\r\n");
-        }
+        // if((count_button1pressed/2 >= 1) && (count_button1pressed%2==0)){
+        //   flag_adc=1; //start read adc value
+        //   chprintf((BaseSequentialStream *)&SD2,"Start Reading ADC Value \r\n\r\n");
+        // }
+        // else{
+        //   flag_adc=0; //stop read adc value
+        //   chprintf((BaseSequentialStream *)&SD2,"Stop Reading ADC Value \r\n\r\n");
+        // }
       }
     }
     if (events & EVENT_MASK(1)) {
@@ -178,16 +195,55 @@ static THD_FUNCTION(Thread3, arg) {
   adcSTM32EnableTSVREFE();
   adcStartConversion(&ADCD1, &adcgrpcfg1, samples1, ADC_GRP1_BUF_DEPTH);
   while (true) {
-    if(flag_adc!=0){
-      adcStartConversion(&ADCD1, &adcgrpcfg1, samples1, ADC_GRP1_BUF_DEPTH);
-      chprintf((BaseSequentialStream *)&SD2,"ADC1_CH0 : %d \r\n\r\n", avg_adc1ch0);
-      chprintf((BaseSequentialStream *)&SD2,"ADC1_CH1 : %d \r\n\r\n", avg_adc1ch1);
-    }
-    else{
-      adcStopConversion(&ADCD1);
-      adcSTM32DisableTSVREFE();
-    }
+    // if(flag_adc!=0){
+    //   adcStartConversion(&ADCD1, &adcgrpcfg1, samples1, ADC_GRP1_BUF_DEPTH);
+    //   chprintf((BaseSequentialStream *)&SD2,"ADC1_CH0 : %d \r\n\r\n", avg_adc1ch0);
+    //   chprintf((BaseSequentialStream *)&SD2,"ADC1_CH1 : %d \r\n\r\n", avg_adc1ch1);
+    // }
+    // else{
+    //   adcStopConversion(&ADCD1);
+    //   adcSTM32DisableTSVREFE();
+    // }
+    adcStartConversion(&ADCD1, &adcgrpcfg1, samples1, ADC_GRP1_BUF_DEPTH);
+    chprintf((BaseSequentialStream *)&SD2,"ADC1_CH0 : %d \r\n\r\n", avg_adc1ch0);
+    chprintf((BaseSequentialStream *)&SD2,"ADC1_CH1 : %d \r\n\r\n", avg_adc1ch1);
     chThdSleepMilliseconds(100);
+  }
+}
+/*--------------------------------------------------------------------------*/
+/*=============================================================================*/
+
+/*=============================================================================*/
+/*--------------  PWM  --------------------*/
+static THD_WORKING_AREA(waThread4, 128);
+static THD_FUNCTION(Thread4, arg) {
+  (void)arg;
+  chRegSetThreadName("PWM");
+  //see alternate function mapping on datasheet stm32f407
+  palSetGroupMode(GPIOE, PAL_PORT_BIT(9) | PAL_PORT_BIT(11), 0, PAL_MODE_ALTERNATE(1)); //TIM1_CH1 - TIM1_CH2
+  // palSetPadMode(GPIOE, 9, PAL_MODE_ALTERNATE(1)); //TIM1_CH1
+  // palSetPadMode(GPIOE, 11, PAL_MODE_ALTERNATE(1)); //TIM1_CH2
+  // palSetPadMode(GPIOB, 4, PAL_MODE_ALTERNATE(2)); //TIM3_CH1
+  // palSetPadMode(GPIOB, 6, PAL_MODE_ALTERNATE(2)); //TIM4_CH1
+  /*Initializes the PWM driver 1*/
+  pwmStart(&PWMD1, &pwmcfgTim1);
+  // pwmStart(&PWMD3, &pwmcfg);
+  // pwmStart(&PWMD4, &pwmcfg);
+  /*
+    Note : channel 1 di hardware -> di program ditulis channel 0
+  */
+  // pwmEnablePeriodicNotification(&PWMD1); //To enable callbacks we should enable this
+  //pwmEnableChannelNotification(&PWMD1, 1);
+  /* Starts the PWM channel 1 using 75% duty cycle. */
+  // pwmDisableChannel(&PWMD1, 1);
+  // pwmStop(&PWMD1);
+  // /* Changes PWM period, implicitly.  */
+  // pwmChangePeriod(&PWMD1, 2000);
+  while (true) {
+    // PWMD1.period = avg_adc1ch1*30;
+    pwmEnableChannel(&PWMD1, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, avg_adc1ch0*2));
+    pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, avg_adc1ch1*2));
+    chThdSleepMilliseconds(100);  
   }
 }
 /*--------------------------------------------------------------------------*/
@@ -215,18 +271,20 @@ int main(void) {
   /*-------------------------------------------------------------------------*/
   /*===========================================================================*/
   /*------------------  Debug via Serial Using UART2  ----------------------*/
-  static const SerialConfig serialconfig = {
-    38400 //baudrate
+  static const SerialConfig serialcfg = {
+    38400,          /* Bit rate */
+    0,              /* CR1 register */ 
+    0,              /* CR2 register */
+    0               /* CR3 register */
   };
   // Default is 38400-8-N-1
   // bits :8, stopbits : 1, parity :none, flow control : none
   /* Activates the serial driver 2.
    * PD5(TX) and PD6(RX) are routed to USART2.*/
-  sdStart(&SD2, &serialconfig);
+  sdStart(&SD2, &serialcfg);
   palSetPadMode(GPIOD, 5, PAL_MODE_ALTERNATE(7));
   palSetPadMode(GPIOD, 6, PAL_MODE_ALTERNATE(7));
   chprintf((BaseSequentialStream *)&SD2,"Debug Via Serial Using UART2 \r\n");
-  // chprintf((BaseSequentialStream *)&SD2,"Button Pressed : %d \r\n", nilai);
   /*-------------------------------------------------------------------------*/
   /*===========================================================================*/
   /*
@@ -236,13 +294,13 @@ int main(void) {
     Ordering thread by decreasing priority they are main, Thread1, ...., and idle.
   */
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO+1, Thread1, NULL);
-  chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO+5, Thread2, NULL);
-  chThdCreateStatic(waThread3, sizeof(waThread3), NORMALPRIO+3, Thread3, NULL);
+  chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO+2, Thread2, NULL);
+  chThdCreateStatic(waThread3, sizeof(waThread3), NORMALPRIO+4, Thread3, NULL);
+  chThdCreateStatic(waThread4, sizeof(waThread4), NORMALPRIO+3, Thread4, NULL);
   /*===========================================================================*/
   /*
    * Normal main() thread activity. NORMALPRIO
    */
   while (true) {
-    chThdSleepMilliseconds(5000);
   }
 }

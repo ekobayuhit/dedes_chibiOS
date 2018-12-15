@@ -63,6 +63,7 @@ build/obj/stm32_isr.o: ..//os/hal/ports/STM32/STM32F4xx/stm32_isr.c \
  ..//os/hal/include/hal_gpt.h ..//os/hal/include/hal_i2c.h \
  ..//os/hal/include/hal_i2s.h ..//os/hal/include/hal_icu.h \
  ..//os/hal/include/hal_mac.h ..//os/hal/include/hal_pwm.h \
+ ..//os/hal/ports/STM32/LLD/TIMv1/hal_pwm_lld.h \
  ..//os/hal/include/hal_qspi.h ..//os/hal/include/hal_rtc.h \
  ..//os/hal/include/hal_serial.h \
  ..//os/hal/ports/STM32/LLD/USARTv1/hal_serial_lld.h \
@@ -260,6 +261,8 @@ mcuconf.h:
 ..//os/hal/include/hal_mac.h:
 
 ..//os/hal/include/hal_pwm.h:
+
+..//os/hal/ports/STM32/LLD/TIMv1/hal_pwm_lld.h:
 
 ..//os/hal/include/hal_qspi.h:
 
