@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccMTzyco.s 			page 1
+ARM GAS  /tmp/ccxPv92h.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -14,14 +14,14 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   11              		.file	"chregistry.c"
   12              		.text
   13              	.Ltext0:
-  14              		.section	.gnu.lto_.profile.4df58ffbe447681e,"",%progbits
+  14              		.section	.gnu.lto_.profile.9e8643a4b7a39133,"",%progbits
   15 0000 789C6365 		.ascii	"x\234ce`b`e```d\350d\014\007\000\002\212\000\357"
   15      60626065 
   15      60606064 
   15      E8640C07 
   15      00028A00 
   16              		.text
-  17              		.section	.gnu.lto_.icf.4df58ffbe447681e,"",%progbits
+  17              		.section	.gnu.lto_.icf.9e8643a4b7a39133,"",%progbits
   18 0000 789C6365 		.ascii	"x\234ce`bPc@\0006\206\303o\366/ca\272\321{\254\207\237"
   18      60625063 
   18      40003686 
@@ -37,7 +37,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   20      00624811 
   20      6F
   21              		.text
-  22              		.section	.gnu.lto_.jmpfuncs.4df58ffbe447681e,"",%progbits
+  22              		.section	.gnu.lto_.jmpfuncs.9e8643a4b7a39133,"",%progbits
   23 0000 789C6365 		.ascii	"x\234ce`b0c@\000V fbdd\254gb\252\004\361\231\201lF&"
   23      60623063 
   23      40005620 
@@ -50,7 +50,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   24      8B
   25 002c 02DD     		.ascii	"\002\335"
   26              		.text
-  27              		.section	.gnu.lto_.inline.4df58ffbe447681e,"",%progbits
+  27              		.section	.gnu.lto_.inline.9e8643a4b7a39133,"",%progbits
   28 0000 789C6365 		.ascii	"x\234ce`b\350a@\000V\006\006N\016F\006&\236\007\261"
   28      6062E861 
   28      40005606 
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   28      06269E07 
   29 0015 0C6C0BE4 		.ascii	"\014l\013\344\231@bL\014\274\242@!\376\005%\014\354"
   29      9940624C 
-ARM GAS  /tmp/ccMTzyco.s 			page 2
+ARM GAS  /tmp/ccxPv92h.s 			page 2
 
 
   29      0CBCA240 
@@ -81,7 +81,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   33 005f 0300642F 		.ascii	"\003\000d/\023\374"
   33      13FC
   34              		.text
-  35              		.section	.gnu.lto_.pureconst.4df58ffbe447681e,"",%progbits
+  35              		.section	.gnu.lto_.pureconst.9e8643a4b7a39133,"",%progbits
   36 0000 789C6365 		.ascii	"x\234ce`b\020````e\330\305\310\264\213\221y\027#\313"
   36      60621060 
   36      60606065 
@@ -91,7 +91,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   37      8C001FD9 
   37      03D2
   38              		.text
-  39              		.section	.gnu.lto_chRegFirstThread.4df58ffbe447681e,"",%progbits
+  39              		.section	.gnu.lto_chRegFirstThread.9e8643a4b7a39133,"",%progbits
   40 0000 789C8593 		.ascii	"x\234\205\223[L\023i\024\307\317\231ohK\213\033\343"
   40      5B4C1369 
   40      14C7CF99 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   44      B2366967 
   44      E63BFF73 
   45 0067 350B34E8 		.ascii	"5\0134\350\321\001z\001`\031}Q\000j\307\037\003Ty4D"
-ARM GAS  /tmp/ccMTzyco.s 			page 3
+ARM GAS  /tmp/ccxPv92h.s 			page 3
 
 
   45      D1017A01 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   56      1DA163DB 
   56      424FD88E 
   56      05945433 
-ARM GAS  /tmp/ccMTzyco.s 			page 4
+ARM GAS  /tmp/ccxPv92h.s 			page 4
 
 
   56      296FEB
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   68      F0A69F1D 
   68      918DB7D0 
   68      C13A91
-ARM GAS  /tmp/ccMTzyco.s 			page 5
+ARM GAS  /tmp/ccxPv92h.s 			page 5
 
 
   69 0217 41207578 		.ascii	"A ux\344\374t\364\0342*=h\324\321:\311\326m4\330VS\236"
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   80      9BEE9705 
   80      02
   81 02ef 8611B10D 		.ascii	"\206\021\261\015+j\330\226i\230eVp{\310\216Z\025\001"
-ARM GAS  /tmp/ccMTzyco.s 			page 6
+ARM GAS  /tmp/ccxPv92h.s 			page 6
 
 
   81      2B6AD896 
@@ -337,7 +337,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   88 0371 2B4AC6BB 		.ascii	"+J\306\273G"
   88      47
   89              		.text
-  90              		.section	.gnu.lto_chRegNextThread.4df58ffbe447681e,"",%progbits
+  90              		.section	.gnu.lto_chRegNextThread.9e8643a4b7a39133,"",%progbits
   91 0000 789C8554 		.ascii	"x\234\205T[L\034e\024>g\376\331\373\226\030\337\212"
   91      5B4C1C65 
   91      143E67FE 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
   94      6961E562 
   94      0BD29692 
   95 004b 5478B016 		.ascii	"Tx\260\0260B1^\242\250IE\317\371w\241\260\250\235dv"
-ARM GAS  /tmp/ccMTzyco.s 			page 7
+ARM GAS  /tmp/ccxPv92h.s 			page 7
 
 
   95      3042315E 
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  107      B834AAA8 
  107      03ED480F 
  107      3EEC9CC6 
-ARM GAS  /tmp/ccMTzyco.s 			page 8
+ARM GAS  /tmp/ccxPv92h.s 			page 8
 
 
  108 012d 945CFDBB 		.ascii	"\224\\\375\273R\246V\236\375\272w\345I/\002\037\023"
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  119      44DBD9F7 
  119      978EE41D 
  119      8F8A
-ARM GAS  /tmp/ccMTzyco.s 			page 9
+ARM GAS  /tmp/ccxPv92h.s 			page 9
 
 
  120 01fb EEE768BC 		.ascii	"\356\347h\274\204:,`\302\247\372\007X\304\304\245?\207"
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  131      91CEE548 
  131      A7
  132 02cd BB5839D9 		.ascii	"\273X9\331\355\346\036\275\2108Fy\010\261\306\305.\331"
-ARM GAS  /tmp/ccMTzyco.s 			page 10
+ARM GAS  /tmp/ccxPv92h.s 			page 10
 
 
  132      EDE61EBD 
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  143      667877C6 
  143      35188D44 
  143      A2254669 
-ARM GAS  /tmp/ccMTzyco.s 			page 11
+ARM GAS  /tmp/ccxPv92h.s 			page 11
 
 
  143      D48CC7
@@ -628,7 +628,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  149      35CBE01F 
  149      678F0F5D 
  150              		.text
- 151              		.section	.gnu.lto_chRegFindThreadByName.4df58ffbe447681e,"",%progbits
+ 151              		.section	.gnu.lto_chRegFindThreadByName.9e8643a4b7a39133,"",%progbits
  152 0000 789C9D56 		.ascii	"x\234\235VkL\024W\024\276g\356\356\354\223\305\326\304"
  152      6B4C1457 
  152      14BE67EE 
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  157      6C3A09C3 
  157      DCB9E7F1 
  157      9D73BEFB 
-ARM GAS  /tmp/ccMTzyco.s 			page 12
+ARM GAS  /tmp/ccxPv92h.s 			page 12
 
 
  157      CD
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  169      4D6A9DAA 
  169      C3A45018 
  169      EC4F179A 
-ARM GAS  /tmp/ccMTzyco.s 			page 13
+ARM GAS  /tmp/ccxPv92h.s 			page 13
 
 
  169      7795
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  181 0212 1AE48071 		.ascii	"\032\344\200qh\016\215\207\261\322\337\311^\232\274"
  181      680E8D87 
  181      B1D2DFC9 
-ARM GAS  /tmp/ccMTzyco.s 			page 14
+ARM GAS  /tmp/ccxPv92h.s 			page 14
 
 
  181      5E9ABC
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  193      131006
  194 02ec 70091402 		.ascii	"p\011\024\002\347\231Cph\024\010I@\034\310\313\007\015"
  194      E7994370 
-ARM GAS  /tmp/ccMTzyco.s 			page 15
+ARM GAS  /tmp/ccxPv92h.s 			page 15
 
 
  194      68140849 
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  205      CDCCC54D 
  205      9860B4F0 
  206 03c6 4E31301B 		.ascii	"N10\033\314\306\345\253\336\2611\2236\"\216\246\320"
-ARM GAS  /tmp/ccMTzyco.s 			page 16
+ARM GAS  /tmp/ccxPv92h.s 			page 16
 
 
  206      CCC6E5AB 
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  217      2F80A161 
  217      54B32B2C 
  218 0495 FD0CED98 		.ascii	"\375\014\355\230\220\310\322e\204\320\305\255!*\000"
-ARM GAS  /tmp/ccMTzyco.s 			page 17
+ARM GAS  /tmp/ccxPv92h.s 			page 17
 
 
  218      90C8D265 
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  229      64A6A0E4 
  229      234D15C5 
  229      C9
-ARM GAS  /tmp/ccMTzyco.s 			page 18
+ARM GAS  /tmp/ccxPv92h.s 			page 18
 
 
  230 0571 9D10E0D2 		.ascii	"\235\020\340\322P9F\272vT\367\225{%-R\033\032I\224x"
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  241      D292E898 
  241      0F98E460 
  241      86E484
-ARM GAS  /tmp/ccMTzyco.s 			page 19
+ARM GAS  /tmp/ccxPv92h.s 			page 19
 
 
  242 064f E454C706 		.ascii	"\344T\307\006\366n87\1775\211\354_\337\255\010\245"
@@ -1087,7 +1087,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  242      5FDFAD08 
  242      A5
  243              		.text
- 244              		.section	.gnu.lto_chRegFindThreadByPointer.4df58ffbe447681e,"",%progbits
+ 244              		.section	.gnu.lto_chRegFindThreadByPointer.9e8643a4b7a39133,"",%progbits
  245 0000 789C9D56 		.ascii	"x\234\235V]L\024W\024\276g\356\354\314\356\354\202M"
  245      5D4C1457 
  245      14BE67EE 
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  254      B2
  255 00b1 45B1AA80 		.ascii	"E\261\252\200\003f>;\371^\016]y\247\213\370\016\356"
  255      03663E3B 
-ARM GAS  /tmp/ccMTzyco.s 			page 20
+ARM GAS  /tmp/ccxPv92h.s 			page 20
 
 
  255      F95E0E5D 
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  266      FCB3C568 
  266      78FCE168 
  266      E5D8
-ARM GAS  /tmp/ccMTzyco.s 			page 21
+ARM GAS  /tmp/ccxPv92h.s 			page 21
 
 
  267 018b 9BB38111 		.ascii	"\233\263\201\021\011\211\216\252\000\235U\025\233X\361"
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  278      473DFD12 
  278      BE81
  279 0256 5A90C521 		.ascii	"Z\220\305!\031\\\020\332>Z\347\037v$\326\007\242\025"
-ARM GAS  /tmp/ccMTzyco.s 			page 22
+ARM GAS  /tmp/ccxPv92h.s 			page 22
 
 
  279      195C10DA 
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  290      728D92DB 
  290      01E012
  291 0328 A6C2FDF7 		.ascii	"\246\302\375\367\330\010\362\337\266*\236M\241\255\021"
-ARM GAS  /tmp/ccMTzyco.s 			page 23
+ARM GAS  /tmp/ccxPv92h.s 			page 23
 
 
  291      D808F2DF 
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  302      41E48F70 
  302      2D960795 
  302      A298AECF 
-ARM GAS  /tmp/ccMTzyco.s 			page 24
+ARM GAS  /tmp/ccxPv92h.s 			page 24
 
 
  303 03fc E04137A6 		.ascii	"\340A7\246\367\240^J\372Kt+\373D+\373\303Z\031\303^"
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  314      CE1E42DE 
  314      C0B60716 
  314      623CE5AB 
-ARM GAS  /tmp/ccMTzyco.s 			page 25
+ARM GAS  /tmp/ccxPv92h.s 			page 25
 
 
  314      2EAE10
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  326      D282CBEB 
  326      3C1B3CB8 
  326      F446CAAA 
-ARM GAS  /tmp/ccMTzyco.s 			page 26
+ARM GAS  /tmp/ccxPv92h.s 			page 26
 
 
  326      95
@@ -1509,7 +1509,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  327      33DD1BD8 
  328 05d0 E685AEE1 		.ascii	"\346\205\256\341"
  329              		.text
- 330              		.section	.gnu.lto_chRegFindThreadByWorkingArea.4df58ffbe447681e,"",%progbits
+ 330              		.section	.gnu.lto_chRegFindThreadByWorkingArea.9e8643a4b7a39133,"",%progbits
  331 0000 789C9D56 		.ascii	"x\234\235VkL\024W\024\276g\356\356\354\262\273\254\246"
  331      6B4C1457 
  331      14BE67EE 
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  340      4BE206A3 
  340      6C36013E 
  340      30EDDA
-ARM GAS  /tmp/ccMTzyco.s 			page 27
+ARM GAS  /tmp/ccxPv92h.s 			page 27
 
 
  341 00b9 CEF3395C 		.ascii	"\316\3639\\\311\251\334\313\267q\037g`\300\345\343K"
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  352      573D0F39 
  352      7F38EA5C 
  352      A5E35C0D 
-ARM GAS  /tmp/ccMTzyco.s 			page 28
+ARM GAS  /tmp/ccxPv92h.s 			page 28
 
 
  352      09473BA1 
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  364      A754B341 
  364      42C3D310 
  365 025e 600D3DBA 		.ascii	"`\015=\272\032\220\360\015\234\001\203(\222A\235 {Y"
-ARM GAS  /tmp/ccMTzyco.s 			page 29
+ARM GAS  /tmp/ccxPv92h.s 			page 29
 
 
  365      1A90F00D 
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  377 032e E02736B6 		.ascii	"\340'6\266UY(\270\015\000.b(\314\237\027C&\377-U\321"
  377      555928B8 
  377      0D002E62 
-ARM GAS  /tmp/ccMTzyco.s 			page 30
+ARM GAS  /tmp/ccxPv92h.s 			page 30
 
 
  377      28CC9F17 
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  389 0404 F9A4E379 		.ascii	"\371\244\343yhb\372J{\003\022(\000\353\205\034\177S"
  389      6862FA4A 
  389      7B031228 
-ARM GAS  /tmp/ccMTzyco.s 			page 31
+ARM GAS  /tmp/ccxPv92h.s 			page 31
 
 
  389      00EB851C 
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  400      5C286760 
  400      BDAC61B1 
  400      45556A9D 
-ARM GAS  /tmp/ccMTzyco.s 			page 32
+ARM GAS  /tmp/ccxPv92h.s 			page 32
 
 
  401 04e4 43F225E2 		.ascii	"C\362%\342\016\204\244\262\237k\241b1Z\2306\336\324"
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  412 05b6 B8D62439 		.ascii	"\270\326$9\231\364\3352\356\364dJ\236L\236\356\3114"
  412      99F4DD32 
  412      EEF4644A 
-ARM GAS  /tmp/ccMTzyco.s 			page 33
+ARM GAS  /tmp/ccxPv92h.s 			page 33
 
 
  412      9E4C9EEE 
@@ -1957,7 +1957,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  419      2FC47DF5 
  419      DF
  420              		.text
- 421              		.section	.gnu.lto_ch_debug.4df58ffbe447681e,"",%progbits
+ 421              		.section	.gnu.lto_ch_debug.9e8643a4b7a39133,"",%progbits
  422 0000 789C2D8F 		.ascii	"x\234-\217[K\002a\020\206w\366s\313\303z\010\"\272\330"
  422      5B4B0261 
  422      108677F6 
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  425      C7E51B1E 
  425      9E7D6776 
  425      E7532459 
-ARM GAS  /tmp/ccMTzyco.s 			page 34
+ARM GAS  /tmp/ccxPv92h.s 			page 34
 
 
  426 004c 4092F0D8 		.ascii	"@\222\360\330\317\232\200b\257fyu\221\021\370\0225\256"
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  437      7B4010B0 
  437      4F70C01E 
  437      41618C41 
-ARM GAS  /tmp/ccMTzyco.s 			page 35
+ARM GAS  /tmp/ccxPv92h.s 			page 35
 
 
  438 0130 300E2582 		.ascii	"0\016%\202\023\212\004\027\354\022\334\260C\360\300"
@@ -2054,7 +2054,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  440      FD033C70 
  440      99A6
  441              		.text
- 442              		.section	.gnu.lto_.symbol_nodes.4df58ffbe447681e,"",%progbits
+ 442              		.section	.gnu.lto_.symbol_nodes.9e8643a4b7a39133,"",%progbits
  443 0000 789C558C 		.ascii	"x\234U\214K\012\302@\020Dk\252\323\306[(9\211\236\254"
  443      4B0AC240 
  443      10446BAA 
@@ -2090,7 +2090,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  449      5F52C108 
  449      78572FDA 
  450              		.text
- 451              		.section	.gnu.lto_.refs.4df58ffbe447681e,"",%progbits
+ 451              		.section	.gnu.lto_.refs.9e8643a4b7a39133,"",%progbits
  452 0000 789C6365 		.ascii	"x\234ce`bPf```\004\"\026F&&F6&f \213\211Q\232\211\005"
  452      60625066 
  452      60606004 
@@ -2098,13 +2098,13 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  452      26463626 
  453 001c 4C8B33B1 		.ascii	"L\2133\261\202i)\006\000\015\364\000\263"
  453      82692906 
-ARM GAS  /tmp/ccMTzyco.s 			page 36
+ARM GAS  /tmp/ccxPv92h.s 			page 36
 
 
  453      000DF400 
  453      B3
  454              		.text
- 455              		.section	.gnu.lto_.decls.4df58ffbe447681e,"",%progbits
+ 455              		.section	.gnu.lto_.decls.9e8643a4b7a39133,"",%progbits
  456 0000 789CB53B 		.ascii	"x\234\265;kT\024\351\225\375\325\327tC\323\200Q\343"
  456      6B5414E9 
  456      95FDD5D7 
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  467 00bf F039C073 		.ascii	"\3609\300s2\016`\022\316{\001\314\000:.\377c\240\375"
  467      320E6012 
  467      CE7B01CC 
-ARM GAS  /tmp/ccMTzyco.s 			page 37
+ARM GAS  /tmp/ccxPv92h.s 			page 37
 
 
  467      003A2EFF 
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  479      9D16BA50 
  479      0722
  480 019e A5308B5E 		.ascii	"\2450\213^E\210\375E\024(:-\375\020\242\327\341\252"
-ARM GAS  /tmp/ccMTzyco.s 			page 38
+ARM GAS  /tmp/ccxPv92h.s 			page 38
 
 
  480      4588FD45 
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  491      C8D7B08F 
  491      685B
  492 0278 71E1F882 		.ascii	"q\341\370\202\324\265\242(\240\343\310\200\216\"\214"
-ARM GAS  /tmp/ccMTzyco.s 			page 39
+ARM GAS  /tmp/ccxPv92h.s 			page 39
 
 
  492      D4B5A228 
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  503      B9727CA0 
  503      B6DAC0
  504 035a D88B08F0 		.ascii	"\330\213\010\360\347{\233\256\273\342u\214\266\264\244"
-ARM GAS  /tmp/ccMTzyco.s 			page 40
+ARM GAS  /tmp/ccxPv92h.s 			page 40
 
 
  504      E77B9BAE 
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  515      E20D5613 
  515      C313
  516 0435 4347B558 		.ascii	"CG\265X\304TDb\357\360\013/\346\374\231\014zU\030HE"
-ARM GAS  /tmp/ccMTzyco.s 			page 41
+ARM GAS  /tmp/ccxPv92h.s 			page 41
 
 
  516      C4544462 
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  527      B45BC4F3 
  527      35E8
  528 051e 5D6FB408 		.ascii	"]o\264\010\254y\002\326xskF\300\232a\336Fw\346Vy\340"
-ARM GAS  /tmp/ccMTzyco.s 			page 42
+ARM GAS  /tmp/ccxPv92h.s 			page 42
 
 
  528      AC7902D6 
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  539      A05B82AC 
  539      9BAF4DB5 
  539      EC68F13B 
-ARM GAS  /tmp/ccMTzyco.s 			page 43
+ARM GAS  /tmp/ccxPv92h.s 			page 43
 
 
  539      91
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  550      9D51
  551 06ca 1936A3CE 		.ascii	"\0316\243\3166D\347\271\343AfT\337\213]\267\364x\210"
  551      3644E7B9 
-ARM GAS  /tmp/ccMTzyco.s 			page 44
+ARM GAS  /tmp/ccxPv92h.s 			page 44
 
 
  551      E3416654 
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  562      57326BF6 
  562      8235C784 
  563 07ac 17A8EB0F 		.ascii	"\027\250\353\017\222\277\0326\344\362\237\267\211\025"
-ARM GAS  /tmp/ccMTzyco.s 			page 45
+ARM GAS  /tmp/ccxPv92h.s 			page 45
 
 
  563      92BF1A36 
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  575      C475B6DB 
  575      A7383D71 
  575      DD69
-ARM GAS  /tmp/ccMTzyco.s 			page 46
+ARM GAS  /tmp/ccxPv92h.s 			page 46
 
 
  576 0889 705D2977 		.ascii	"p])w\01576\217\031[fo,\251\205\250\333\0170\356g\265"
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  587      FAB98CBE 
  587      162C3FAD 
  587      4E4FD92B 
-ARM GAS  /tmp/ccMTzyco.s 			page 47
+ARM GAS  /tmp/ccxPv92h.s 			page 47
 
 
  587      12AF
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  599      F806905D 
  599      72F47013 
  599      7A79EBEC 
-ARM GAS  /tmp/ccMTzyco.s 			page 48
+ARM GAS  /tmp/ccxPv92h.s 			page 48
 
 
  599      022B3AB8 
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  611 0b0b AF72D3D5 		.ascii	"\257r\323\3252\356\324{\340\247\373\257\345\247\373"
  611      32EED47B 
  611      E0A7FBAF 
-ARM GAS  /tmp/ccMTzyco.s 			page 49
+ARM GAS  /tmp/ccxPv92h.s 			page 49
 
 
  611      E5A7FB
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  623      92AEE7E4 
  623      45E47945 
  623      5F9CAEC7 
-ARM GAS  /tmp/ccMTzyco.s 			page 50
+ARM GAS  /tmp/ccxPv92h.s 			page 50
 
 
  623      93C3
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  634      B617
  635 0cc1 E8920DBA 		.ascii	"\350\222\015\272\\\376\220\351\"\012\204\012\305\311"
  635      5CFE90E9 
-ARM GAS  /tmp/ccMTzyco.s 			page 51
+ARM GAS  /tmp/ccxPv92h.s 			page 51
 
 
  635      220A840A 
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  646      C88AFD
  647 0d9c 1EF800A3 		.ascii	"\036\370\000\243\270\031\327Z\356N(\266\021\212\255"
  647      B819D75A 
-ARM GAS  /tmp/ccMTzyco.s 			page 52
+ARM GAS  /tmp/ccxPv92h.s 			page 52
 
 
  647      EE4E28B6 
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  659      9A06C544 
  659      D3A7F878 
  659      520B
-ARM GAS  /tmp/ccMTzyco.s 			page 53
+ARM GAS  /tmp/ccxPv92h.s 			page 53
 
 
  660 0e79 7B8AE761 		.ascii	"{\212\347a#\312\345\324N\237\265\325]\254e\003\221\303"
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  670      E104CCB7 
  671 0f4d 9E3A62C4 		.ascii	"\236:b\304\327\231m\217\237g\225\3604\236\013\350\213"
  671      D7996D8F 
-ARM GAS  /tmp/ccMTzyco.s 			page 54
+ARM GAS  /tmp/ccxPv92h.s 			page 54
 
 
  671      9F6795F0 
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  684 1022 50A51C6B 		.ascii	"P\245\034k\177\356\205\263(\"d\024\355\032\301\316\276"
  684      7FEE85B3 
  684      28226414 
-ARM GAS  /tmp/ccMTzyco.s 			page 55
+ARM GAS  /tmp/ccxPv92h.s 			page 55
 
 
  684      ED1AC1CE 
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  695      D212A4DF 
  695      89F5
  696 1107 7C1BA253 		.ascii	"|\033\242S\261\221\323\211\035\310\355\027[`\333\325"
-ARM GAS  /tmp/ccMTzyco.s 			page 56
+ARM GAS  /tmp/ccxPv92h.s 			page 56
 
 
  696      B191D389 
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  707      3690
  708 11db AE67854A 		.ascii	"\256g\205J\244\336\003\251\217\325;\212\332\224GC\211"
  708      A4DE03A9 
-ARM GAS  /tmp/ccMTzyco.s 			page 57
+ARM GAS  /tmp/ccxPv92h.s 			page 57
 
 
  708      8FD53B8A 
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  719      1D5FD94A 
  719      A8E1
  720 12b7 DC7A5242 		.ascii	"\334zRB/`\314s9\240cR\011\025_\250\351\366x3\207.\005"
-ARM GAS  /tmp/ccMTzyco.s 			page 58
+ARM GAS  /tmp/ccxPv92h.s 			page 58
 
 
  720      2F60CC73 
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  731      048C4F31 
  731      64C7
  732 1387 F4588A1B 		.ascii	"\364X\212\033\256d\310\336\311gC\344\263\201\267\310"
-ARM GAS  /tmp/ccMTzyco.s 			page 59
+ARM GAS  /tmp/ccxPv92h.s 			page 59
 
 
  732      AE64C8DE 
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  743      3C42E5CE 
  744 145a DDFB6411 		.ascii	"\335\373d\021\362q\370A\337\342\223\206\333;\365\017"
  744      F271F841 
-ARM GAS  /tmp/ccMTzyco.s 			page 60
+ARM GAS  /tmp/ccxPv92h.s 			page 60
 
 
  744      DFE29386 
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  755      468DD8E1 
  755      F92D6850 
  756 153c 3482482D 		.ascii	"4\202H-\335\255\320\262\007\322Qh\023EZ\037\264\007"
-ARM GAS  /tmp/ccMTzyco.s 			page 61
+ARM GAS  /tmp/ccxPv92h.s 			page 61
 
 
  756      DDADD0B2 
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  767      B0BE3F9A 
  767      18
  768 160b FB94FFAF 		.ascii	"\373\224\377\257\025\262Y\332\336\\P\355\341(\035\212"
-ARM GAS  /tmp/ccMTzyco.s 			page 62
+ARM GAS  /tmp/ccxPv92h.s 			page 62
 
 
  768      15B259DA 
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  779      7FBDA89D 
  779      BDBDAA11 
  780 16e4 0825AA95 		.ascii	"\010%\252\225tE\365Z-\301\354\325m\244\3526?,Mv\307"
-ARM GAS  /tmp/ccMTzyco.s 			page 63
+ARM GAS  /tmp/ccxPv92h.s 			page 63
 
 
  780      7445F55A 
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  791      C6E2058A 
  791      C1ADBCC5 
  792 17bc B4D31693 		.ascii	"\264\323\026\223\032u\340\244Q\351\232\014\273\357\016"
-ARM GAS  /tmp/ccMTzyco.s 			page 64
+ARM GAS  /tmp/ccxPv92h.s 			page 64
 
 
  792      1A75E0A4 
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  804      92257E81 
  804      2B2539FA 
  804      10EBB7C1 
-ARM GAS  /tmp/ccMTzyco.s 			page 65
+ARM GAS  /tmp/ccxPv92h.s 			page 65
 
 
  804      4116
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  816      5658F4D6 
  816      10180198 
  816      C51A6035 
-ARM GAS  /tmp/ccMTzyco.s 			page 66
+ARM GAS  /tmp/ccxPv92h.s 			page 66
 
 
  816      B9
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  828      2193D97B 
  828      C68D7F0F 
  829 1a48 337F03C9 		.ascii	"3\177\003\311\372+\300 \275\276Z\271\354\013S\260\011"
-ARM GAS  /tmp/ccMTzyco.s 			page 67
+ARM GAS  /tmp/ccxPv92h.s 			page 67
 
 
  829      FA2BC020 
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  840      86E8C296 
  840      2FB798AC 
  840      7AB395D6 
-ARM GAS  /tmp/ccMTzyco.s 			page 68
+ARM GAS  /tmp/ccxPv92h.s 			page 68
 
 
  841 1b1f FC3FAADA 		.ascii	"\374?\252\332D\322d\2265\304?\020\212m\2519\300\032"
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  852 1be0 91FEE1B7 		.ascii	"\221\376\341\267\344w_~\372\245\337\022h ~\237J|C,A"
  852      E4775F7E 
  852      FAA5DF12 
-ARM GAS  /tmp/ccMTzyco.s 			page 69
+ARM GAS  /tmp/ccxPv92h.s 			page 69
 
 
  852      68207E9F 
@@ -4094,7 +4094,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  855 1c14 FD0FDD1E 		.ascii	"\375\017\335\036\236n"
  855      9E6E
  856              		.text
- 857              		.section	.gnu.lto_.symtab.4df58ffbe447681e,"",%progbits
+ 857              		.section	.gnu.lto_.symtab.9e8643a4b7a39133,"",%progbits
  858 0000 63685265 		.ascii	"chRegFirstThread\000"
  858      67466972 
  858      73745468 
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  880 0080 00000000 		.ascii	"\000\000\000\000\000\000\000\000"
  880      00000000 
  881 0088 8B010000 		.ascii	"\213\001\000\000"
-ARM GAS  /tmp/ccMTzyco.s 			page 70
+ARM GAS  /tmp/ccxPv92h.s 			page 70
 
 
  882 008c 63685265 		.ascii	"chRegFindThreadByWorkingArea\000"
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  911 0099 4F322720 		.ascii	"O2' '-fomit-frame-pointer' '-falign-functions=16' '"
  911      272D666F 
  911      6D69742D 
-ARM GAS  /tmp/ccMTzyco.s 			page 71
+ARM GAS  /tmp/ccxPv92h.s 			page 71
 
 
  911      6672616D 
@@ -4215,7 +4215,7 @@ ARM GAS  /tmp/ccMTzyco.s 			page 1
  915              		.comm	__gnu_lto_v1,1,1
  916              		.comm	__gnu_lto_slim,1,1
  917              		.ident	"GCC: (15:6.3.1+svn253039-1build1) 6.3.1 20170620"
-ARM GAS  /tmp/ccMTzyco.s 			page 72
+ARM GAS  /tmp/ccxPv92h.s 			page 72
 
 
 DEFINED SYMBOLS

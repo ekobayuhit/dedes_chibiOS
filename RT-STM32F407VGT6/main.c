@@ -23,6 +23,7 @@
 #include "ch.h"
 #include "hal.h"
 #include "chprintf.h"
+#include <stdlib.h>
 /*=============================================================================*/
 
 /*=============================================================================*/
@@ -54,13 +55,13 @@ static adcsample_t samples1[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
 /*=============================================================================*/
 //PWM
 static PWMConfig pwmcfgTim1 = {
-  100000,                                    /* 10kHz PWM clock frequency. Timer clock in Hz.   */
+  1000,                                    /* 10kHz PWM clock frequency. Timer clock in Hz.   */
   10000,                                    /* Initial PWM period 1S.  PWM period in ticks.     */
-  /* PWM period (in ticks) 1S (1/10kHz=0.1mS 0.1ms*10000 ticks=1S) */
+  /* PWM period (in ticks) 1S (1/100kHz=0.01mS 0.01ms*10000 ticks=0.1S) */
   NULL,                                     /* Period callback.              */
   {
    {PWM_OUTPUT_ACTIVE_HIGH, NULL},          /* CH1 mode and callback.         */
-   {PWM_OUTPUT_ACTIVE_HIGH, NULL},          /* CH2 mode and callback.         */
+   {PWM_OUTPUT_DISABLED, NULL},          /* CH2 mode and callback.         */
    {PWM_OUTPUT_DISABLED, NULL},             /* CH3 mode and callback.         */
    {PWM_OUTPUT_DISABLED, NULL},            /* CH4 mode and callback.         */
   },
@@ -91,7 +92,7 @@ void adc_callback(ADCDriver *adcp, adcsample_t *buffer, size_t n) {
  * Mode:        Linear buffer, 8 samples of 1 channel, SW triggered.
  * Channels:    IN11.
  */
-static const ADCConversionGroup adcgrpcfg1 = {
+static const ADCConversionGroup adc1_cfg = {
   FALSE,                                      /*Enable circular buffer mode*/ 
   //should the buffer start over if it becomes full before the conversion is over
   ADC_GRP1_NUM_CHANNELS,                      /*Number of analog channels belonging to the conversion group*/
@@ -164,14 +165,14 @@ static THD_FUNCTION(Thread2, arg) {
         count_button1pressed++;
         event_button1pressed=1;
         chprintf((BaseSequentialStream *)&SD2,"Button Pressed : %d \r\n", count_button1pressed);
-        // if((count_button1pressed/2 >= 1) && (count_button1pressed%2==0)){
-        //   flag_adc=1; //start read adc value
-        //   chprintf((BaseSequentialStream *)&SD2,"Start Reading ADC Value \r\n\r\n");
-        // }
-        // else{
-        //   flag_adc=0; //stop read adc value
-        //   chprintf((BaseSequentialStream *)&SD2,"Stop Reading ADC Value \r\n\r\n");
-        // }
+        if((count_button1pressed/2 >= 1) && (count_button1pressed%2==0)){
+          flag_adc=1; //start read adc value
+          // chprintf((BaseSequentialStream *)&SD2,"Start Reading ADC Value \r\n\r\n");
+        }
+        else{
+          flag_adc=0; //stop read adc value
+          // chprintf((BaseSequentialStream *)&SD2,"Stop Reading ADC Value \r\n\r\n");
+        }
       }
     }
     if (events & EVENT_MASK(1)) {
@@ -193,7 +194,7 @@ static THD_FUNCTION(Thread3, arg) {
   palSetGroupMode(GPIOA, PAL_PORT_BIT(0) | PAL_PORT_BIT(1), 0, PAL_MODE_INPUT_ANALOG); //PA0 - PA1
   adcStart(&ADCD1, NULL);
   adcSTM32EnableTSVREFE();
-  adcStartConversion(&ADCD1, &adcgrpcfg1, samples1, ADC_GRP1_BUF_DEPTH);
+  // adcStartConversion(&ADCD1, &adc1_cfg, samples1, ADC_GRP1_BUF_DEPTH);
   while (true) {
     // if(flag_adc!=0){
     //   adcStartConversion(&ADCD1, &adcgrpcfg1, samples1, ADC_GRP1_BUF_DEPTH);
@@ -204,9 +205,9 @@ static THD_FUNCTION(Thread3, arg) {
     //   adcStopConversion(&ADCD1);
     //   adcSTM32DisableTSVREFE();
     // }
-    adcStartConversion(&ADCD1, &adcgrpcfg1, samples1, ADC_GRP1_BUF_DEPTH);
-    chprintf((BaseSequentialStream *)&SD2,"ADC1_CH0 : %d \r\n\r\n", avg_adc1ch0);
-    chprintf((BaseSequentialStream *)&SD2,"ADC1_CH1 : %d \r\n\r\n", avg_adc1ch1);
+    adcStartConversion(&ADCD1, &adc1_cfg, samples1, ADC_GRP1_BUF_DEPTH);
+    // chprintf((BaseSequentialStream *)&SD2,"ADC1_CH0 : %d \r\n\r\n", avg_adc1ch0);
+    // chprintf((BaseSequentialStream *)&SD2,"ADC1_CH1 : %d \r\n\r\n", avg_adc1ch1);
     chThdSleepMilliseconds(100);
   }
 }
@@ -231,6 +232,7 @@ static THD_FUNCTION(Thread4, arg) {
   // pwmStart(&PWMD4, &pwmcfg);
   /*
     Note : channel 1 di hardware -> di program ditulis channel 0
+    PWM channel identifier (0...channels-1)
   */
   // pwmEnablePeriodicNotification(&PWMD1); //To enable callbacks we should enable this
   //pwmEnableChannelNotification(&PWMD1, 1);
@@ -240,10 +242,73 @@ static THD_FUNCTION(Thread4, arg) {
   // /* Changes PWM period, implicitly.  */
   // pwmChangePeriod(&PWMD1, 2000);
   while (true) {
-    // PWMD1.period = avg_adc1ch1*30;
+    pwmcfgTim1.frequency = avg_adc1ch1*2000;
+    pwmStart(&PWMD1, &pwmcfgTim1);
+    chprintf((BaseSequentialStream *)&SD2,"Freq [Hz] : %d \r\n\r\n", pwmcfgTim1.frequency);
     pwmEnableChannel(&PWMD1, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, avg_adc1ch0*2));
-    pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, avg_adc1ch1*2));
-    chThdSleepMilliseconds(100);  
+    int DutyCyle = (avg_adc1ch0*2)/100;
+    chprintf((BaseSequentialStream *)&SD2,"DutyCyle [%] : %d \r\n\r\n", DutyCyle);
+    // pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, avg_adc1ch1*2));
+    chThdSleepMilliseconds(1000);  
+  }
+}
+/*--------------------------------------------------------------------------*/
+/*=============================================================================*/
+/*=============================================================================*/
+/*----------------------------  SPI2  -------------------------------------*/
+/*
+ * Low speed SPI configuration (328.125kHz, CPHA=0, CPOL=0, MSb first).
+ */
+const SPIConfig ls_spicfg_cs1 = {
+  false,
+  NULL,
+  GPIOE,
+  15,
+  SPI_CR1_BR_2 | SPI_CR1_BR_1,
+  0
+};
+const SPIConfig ls_spicfg_cs2 = {
+  false,
+  NULL,
+  GPIOB,
+  11,
+  SPI_CR1_BR_2 | SPI_CR1_BR_1,
+  0
+};
+
+uint16_t ReadThermocouple(SPIConfig spicfg){
+  uint8_t rxbuf[2] = {0,0};
+  spiAcquireBus(&SPID2); /* Acquire ownership of the bus.    */
+  spiStart(&SPID2, &spicfg);
+  spiSelect(&SPID2); /* Slave Select assertion.          */
+  spiReceive(&SPID2, 2, rxbuf);
+  spiUnselect(&SPID2); /* Slave Select de-assertion.       */
+  spiReleaseBus(&SPID2); /* Ownership release.               */
+  uint16_t i = (rxbuf[0] << 8)|(rxbuf[1]);
+  i = (i >> 3 ) *0.25; // *0.25degC
+  return i;
+}
+
+static THD_WORKING_AREA(waThread5, 256);
+static THD_FUNCTION(Thread5, arg) {
+  (void)arg;
+  chRegSetThreadName("Thermocouple");
+  /*
+   * SPI2 I/O pins setup.
+   */
+  palSetPadMode(GPIOB, 13, PAL_MODE_ALTERNATE(5) | PAL_STM32_OSPEED_HIGHEST);       /* New SCK.     */
+  palSetPadMode(GPIOB, 14, PAL_MODE_ALTERNATE(5) | PAL_STM32_OSPEED_HIGHEST);       /* New MISO.    */
+  palSetPadMode(GPIOB, 11, PAL_MODE_OUTPUT_PUSHPULL | PAL_STM32_OSPEED_HIGHEST);       /* CS 1     */
+  palSetPad(GPIOB, 11);
+  palSetPadMode(GPIOE, 15, PAL_MODE_OUTPUT_PUSHPULL | PAL_STM32_OSPEED_HIGHEST);       /* CS 2.      */
+  palSetPad(GPIOE, 15);
+  while (true) {
+
+    uint16_t temp1 = ReadThermocouple(ls_spicfg_cs1);
+    uint16_t temp2 = ReadThermocouple(ls_spicfg_cs2);
+    chprintf((BaseSequentialStream *)&SD2,"Temp 1 (C) : %.2d \r\n\r\n", temp1);
+    chprintf((BaseSequentialStream *)&SD2,"Temp 2 (C) : %.2d \r\n\r\n", temp2);
+    chThdSleepMilliseconds(500);
   }
 }
 /*--------------------------------------------------------------------------*/
@@ -293,10 +358,11 @@ int main(void) {
  	  Creates a new thread into a static memory area. 
     Ordering thread by decreasing priority they are main, Thread1, ...., and idle.
   */
-  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO+1, Thread1, NULL);
-  chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO+2, Thread2, NULL);
-  chThdCreateStatic(waThread3, sizeof(waThread3), NORMALPRIO+4, Thread3, NULL);
-  chThdCreateStatic(waThread4, sizeof(waThread4), NORMALPRIO+3, Thread4, NULL);
+  // chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO+1, Thread1, NULL);
+  // chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO+2, Thread2, NULL);
+  // chThdCreateStatic(waThread3, sizeof(waThread3), NORMALPRIO+8, Thread3, NULL);
+  // chThdCreateStatic(waThread4, sizeof(waThread4), NORMALPRIO+7, Thread4, NULL);
+  chThdCreateStatic(waThread5, sizeof(waThread5), NORMALPRIO+5, Thread5, NULL);
   /*===========================================================================*/
   /*
    * Normal main() thread activity. NORMALPRIO

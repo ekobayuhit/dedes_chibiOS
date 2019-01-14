@@ -67,11 +67,19 @@ build/obj/main.o: main.c ..//os/rt/include/ch.h chconf.h \
  ..//os/hal/include/hal_serial.h \
  ..//os/hal/ports/STM32/LLD/USARTv1/hal_serial_lld.h \
  ..//os/hal/include/hal_sdc.h ..//os/hal/include/hal_spi.h \
+ ..//os/hal/ports/STM32/LLD/SPIv1/hal_spi_lld.h \
  ..//os/hal/include/hal_uart.h ..//os/hal/include/hal_usb.h \
  ..//os/hal/include/hal_wdg.h ..//os/hal/include/hal_st.h \
  ..//os/hal/include/hal_mmc_spi.h ..//os/hal/include/hal_serial_usb.h \
  ..//os/hal/lib/streams/chprintf.h \
- /usr/lib/gcc/arm-none-eabi/6.3.1/include/stdarg.h
+ /usr/lib/gcc/arm-none-eabi/6.3.1/include/stdarg.h \
+ /usr/include/newlib/stdlib.h /usr/include/newlib/machine/ieeefp.h \
+ /usr/include/newlib/_ansi.h /usr/include/newlib/newlib.h \
+ /usr/include/newlib/sys/config.h /usr/include/newlib/sys/reent.h \
+ /usr/include/newlib/_ansi.h /usr/include/newlib/sys/_types.h \
+ /usr/include/newlib/machine/_types.h /usr/include/newlib/sys/lock.h \
+ /usr/include/newlib/sys/cdefs.h /usr/include/newlib/machine/stdlib.h \
+ /usr/include/newlib/alloca.h
 
 ..//os/rt/include/ch.h:
 
@@ -277,6 +285,8 @@ mcuconf.h:
 
 ..//os/hal/include/hal_spi.h:
 
+..//os/hal/ports/STM32/LLD/SPIv1/hal_spi_lld.h:
+
 ..//os/hal/include/hal_uart.h:
 
 ..//os/hal/include/hal_usb.h:
@@ -292,3 +302,29 @@ mcuconf.h:
 ..//os/hal/lib/streams/chprintf.h:
 
 /usr/lib/gcc/arm-none-eabi/6.3.1/include/stdarg.h:
+
+/usr/include/newlib/stdlib.h:
+
+/usr/include/newlib/machine/ieeefp.h:
+
+/usr/include/newlib/_ansi.h:
+
+/usr/include/newlib/newlib.h:
+
+/usr/include/newlib/sys/config.h:
+
+/usr/include/newlib/sys/reent.h:
+
+/usr/include/newlib/_ansi.h:
+
+/usr/include/newlib/sys/_types.h:
+
+/usr/include/newlib/machine/_types.h:
+
+/usr/include/newlib/sys/lock.h:
+
+/usr/include/newlib/sys/cdefs.h:
+
+/usr/include/newlib/machine/stdlib.h:
+
+/usr/include/newlib/alloca.h:
